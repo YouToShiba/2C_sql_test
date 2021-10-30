@@ -8,14 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class sql_connect extends HttpServlet {
-
-    public Connection con;
-
-    // SQLに接続し、stmtを返す
-    public Statement return_stmt () {
+    // SQLに接続し、conを返す
+    public Connection return_con () {
         String url = "jdbc:postgresql://tokushima.data.ise.shibaura-it.ac.jp:5432/team_one_db";
-
-        Statement stmt = null;
+        Connection con = null;
         try {
             try{
                 Class.forName("org.postgresql.Driver");
@@ -23,20 +19,9 @@ public class sql_connect extends HttpServlet {
                 e.printStackTrace();
             }
             con = DriverManager.getConnection(url,"al19100","bond");
-            stmt = con.createStatement();
-
         } catch (SQLException e){
             e.printStackTrace();
         }
-        return stmt;
-    }
-
-    // stmtを閉じる
-    public void close_psql (Statement stmt) {
-        try {
-            stmt.close();
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
+        return con;
     }
 }
