@@ -6,13 +6,34 @@
 
 
   <servlet>
-    <servlet-name>sql_test</servlet-name>
+    <servlet-name>tomcat_test</servlet-name>
     <servlet-class>tomcatTest</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>sql_test</servlet-name>
+    <servlet-class>sql</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>test_sql_connect</servlet-name>
+    <servlet-class>test_sql_connect</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>tomcat_test</servlet-name>
+    <url-pattern>/tomcat/test/</url-pattern>
+  </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>sql_test</servlet-name>
     <url-pattern>/sql/test/</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>test_sql_connect</servlet-name>
+    <url-pattern>/sql_connect/test/</url-pattern>
   </servlet-mapping>
 
 
