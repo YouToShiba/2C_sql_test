@@ -1,2 +1,5 @@
-# SIT2C_1_2021
-できる
+tomcatTest:Tomcatテスト
+sql:SQL接続テスト
+
+test_sql_connect：sql_connectを用いたsql接続テスト
+sql_connect：SQL接続クラス
